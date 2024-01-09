@@ -8,3 +8,4 @@
 - [6-set.js](6-set.js) - returns a Set from an array
 - [7-has_array_values.js](7-has_array_values.js) - returns a boolean if all the elements in the array exist within the set
 - [8-clean_set.js](8-clean_set.js) - returns a string of all the set values that start with a specific string
+- [9-groceries_list.js](9-groceries_list.js) - returns a map of groceries with the following items (name, quantity)
