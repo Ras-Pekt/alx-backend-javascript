@@ -7,3 +7,4 @@
 - [5-typed_arrays.js](5-typed_arrays.js) - returns a new ArrayBuffer with an Int8 value at a specific position
 - [6-set.js](6-set.js) - returns a Set from an array
 - [7-has_array_values.js](7-has_array_values.js) - returns a boolean if all the elements in the array exist within the set
+- [8-clean_set.js](8-clean_set.js) - returns a string of all the set values that start with a specific string
