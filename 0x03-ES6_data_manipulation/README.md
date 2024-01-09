@@ -9,3 +9,4 @@
 - [7-has_array_values.js](7-has_array_values.js) - returns a boolean if all the elements in the array exist within the set
 - [8-clean_set.js](8-clean_set.js) - returns a string of all the set values that start with a specific string
 - [9-groceries_list.js](9-groceries_list.js) - returns a map of groceries with the following items (name, quantity)
+- [10-update_uniq_items.js](10-update_uniq_items.js) - returns an updated map for all items with initial quantity at 1
