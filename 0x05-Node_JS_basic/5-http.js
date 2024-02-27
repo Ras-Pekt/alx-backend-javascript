@@ -2,22 +2,21 @@
 
 const http = require('http');
 const countStudents = require('./3-read_file_async');
-const port = 1245;
 
-const app = http.createServer(async (request, response) => {
-  response.statusCode = 200;
-  response.setHeader('Content-Type', 'text/plain');
-  if (request.url === '/') response.write('Hello Holberton School!');
-  if (request.url === '/students') {
-    response.write('This is the list of our students\n');
+const app = http.createServer(async (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  if (req.url === '/') res.write('Hello Holberton School!');
+  if (req.url === '/students') {
+    res.write('This is the list of our students\n');
     try {
       const data = await countStudents(process.argv[2]);
-      response.end(`${data.join('\n')}`);
+      res.end(`${data.join('\n')}`);
     } catch (error) {
-      response.end(error.message);
+      res.end(error.message);
     }
   }
-  response.end();
+  res.end();
 });
-app.listen(port);
+app.listen(1245);
 module.exports = app;
