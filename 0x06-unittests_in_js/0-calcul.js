@@ -1,6 +1,6 @@
 function calculateNumber(a, b) {
-  const sum = a + b;
-  return Math.ceil(sum);
+  const sum = Math.round(a) + Math.round(b);
+  return sum;
 }
 
 module.exports = calculateNumber;
