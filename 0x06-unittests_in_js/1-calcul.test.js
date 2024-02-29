@@ -1,51 +1,54 @@
+const calculateNumber = require('./1-calcul');
 const assert = require('assert');
-const calculateNumber = require('./1-calcul.js');
 
-describe('SUM', () => {
-  it('should add two integers correctly', () => {
-    assert.strictEqual(calculateNumber('SUM', 3, 5), 8);
+describe('calculateNumber: ', function () {
+  describe('Sum the variables', function () {
+    it('check equality after sum', function () {
+      assert.equal(calculateNumber('SUM', 1, 1), 2);
+      assert.equal(calculateNumber('SUM', 1, 1.2), 2);
+      assert.equal(calculateNumber('SUM', 1, 1.6), 3);
+      assert.equal(calculateNumber('SUM', 1.3, 1), 2);
+      assert.equal(calculateNumber('SUM', 1.7, 1), 3);
+      assert.equal(calculateNumber('SUM', 1.7, 1.8), 4);
+      assert.equal(calculateNumber('SUM', 1.7, 1.2), 3);
+      assert.equal(calculateNumber('SUM', 1.3, 1.8), 3);
+      assert.equal(calculateNumber('SUM', 1.3, 1.3), 2);
+    });
   });
-
-  it('should add two floating-point numbers correctly', () => {
-    assert.strictEqual(calculateNumber('SUM', 3.5, 2.5), 7);
+  describe('Subtract the second value from the first', function () {
+    it('check equality after subtraction', function () {
+      assert.equal(calculateNumber('SUBTRACT', 1, 1.2), 0);
+      assert.equal(calculateNumber('SUBTRACT', 1, 1.6), -1);
+      assert.equal(calculateNumber('SUBTRACT', 1.7, 1), 1);
+      assert.equal(calculateNumber('SUBTRACT', 1.7, 1.8), 0);
+      assert.equal(calculateNumber('SUBTRACT', 1.7, 1.2), 1);
+      assert.equal(calculateNumber('SUBTRACT', 1.3, 1.8), -1);
+      assert.equal(calculateNumber('SUBTRACT', 1.3, -1.3), 2);
+      assert.equal(calculateNumber('SUBTRACT', -1.3, 1.3), -2);
+      assert.equal(calculateNumber('SUBTRACT', -1.3, -1.3), 0);
+      assert.equal(calculateNumber('SUBTRACT', -1.3, 0), -1);
+      assert.equal(calculateNumber('SUBTRACT', 1.3, 0), 1);
+      assert.equal(calculateNumber('SUBTRACT', 1, 4), -3);
+      assert.equal(calculateNumber('SUBTRACT', 1.7, 3.8), -2);
+      assert.equal(calculateNumber('SUBTRACT', 0.2, 0.4), 0);
+    });
   });
-
-  it('should round numbers before adding', () => {
-    assert.strictEqual(calculateNumber('SUM', 3.2, 2.8), 6);
+  describe('Divide the first value whit the second', function () {
+    it('check equality after division', function () {
+      assert.equal(calculateNumber('DIVIDE', 1, 4), 0.25);
+      assert.equal(calculateNumber('DIVIDE', 1, 1.2), 1);
+      assert.equal(calculateNumber('DIVIDE', 1.3, 1), 1);
+      assert.equal(calculateNumber('DIVIDE', 1.7, 1), 2);
+      assert.equal(calculateNumber('DIVIDE', 1.7, 1.8), 1);
+      assert.equal(calculateNumber('DIVIDE', 1.3, 1.8), 0.5);
+      assert.equal(calculateNumber('DIVIDE', 4.3, 1.8), 2);
+      assert.equal(calculateNumber('DIVIDE', 1.3, -1.2), -1);
+      assert.equal(calculateNumber('DIVIDE', -1.6, 1.2), -2);
+      assert.equal(calculateNumber('DIVIDE', -1.3, -1.2), 1);
+      assert.equal(calculateNumber('DIVIDE', 1.3, 0), 'Error');
+      assert.equal(calculateNumber('DIVIDE', 1.3, 0.2), 'Error');
+      assert.equal(calculateNumber('DIVIDE', -1.3, 0), 'Error');
+      assert.equal(calculateNumber('DIVIDE', 0, 1), 0);
+    });
   });
-
-});
-
-describe('SUBTRACT', () => {
-  it('should subtract two integers correctly', () => {
-    assert.strictEqual(calculateNumber('SUBTRACT', 10, 3), 7);
-  });
-
-  it('should subtract two floating-point numbers correctly', () => {
-    assert.strictEqual(calculateNumber('SUBTRACT', 5.5, 2.5), 3);
-  });
-
-  it('should round numbers before subtracting', () => {
-    assert.strictEqual(calculateNumber('SUBTRACT', 6.5, 2.8), 4);
-  });
-
-});
-
-describe('DIVISION', () => {
-  it('should divide two integers correctly', () => {
-    assert.strictEqual(calculateNumber('DIVIDE', 10, 2), 5);
-  });
-
-  it('should divide two floating-point numbers correctly', () => {
-    assert.strictEqual(calculateNumber('DIVIDE', 5.5, 2.5), 2);
-  });
-
-  it('should round numbers before dividing', () => {
-    assert.strictEqual(calculateNumber('DIVIDE', 7.5, 2.2), 4);
-  });
-
-  it('should handle division by zero', () => {
-    assert.strictEqual(calculateNumber('DIVIDE', 5, 0), 'Error');
-  });
-
 });
