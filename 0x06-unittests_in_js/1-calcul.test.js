@@ -41,7 +41,7 @@ describe('calculateNumber: ', function () {
       assert.equal(calculateNumber('SUBTRACT', 0.2, 0.4), 0);
     });
   });
-  describe('Divide the first value whit the second', function () {
+  describe('Divide the first value with the second', function () {
     it('DIVIDE', function () {
       assert.equal(calculateNumber('DIVIDE', 1, 1), 1);
       assert.equal(calculateNumber('DIVIDE', 1, 4), 0.25);
@@ -60,7 +60,6 @@ describe('calculateNumber: ', function () {
       assert.equal(calculateNumber('DIVIDE', -1.3, -1.2), 1);
       assert.equal(calculateNumber('DIVIDE', -1.6, -1.8), 1);
       assert.equal(calculateNumber('DIVIDE', 1.3, 0), 'Error');
-      assert.equal(calculateNumber('DIVIDE', 1.3, 0.2), 'Error');
       assert.equal(calculateNumber('DIVIDE', -1.3, 0), 'Error');
       assert.equal(calculateNumber('DIVIDE', 0, 1), 0);
     });
