@@ -2,27 +2,15 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul.js');
 
 describe('calculateNumber function', function () {
-  it('should correctly add two numbers', function () {
-    assert.equal(calculateNumber(1, 2), 3);
-  });
-
-  it('should correctly add a number and a decimal', function () {
-    assert.equal(calculateNumber(1, 0.5), 2);
-  });
-
-  it('should correctly add two negative numbers', function () {
-    assert.equal(calculateNumber(-1, -2), -3);
-  });
-
-  it('should correctly add a positive and a negative number', function () {
-    assert.equal(calculateNumber(1, -2), -1);
-  });
-
-  it('should correctly add two large numbers', function () {
-    assert.equal(calculateNumber(1000000, 2000000), 3000000);
-  });
-
-  it('should return the other number if one is zero', function () {
-    assert.equal(calculateNumber(0, 5), 5);
+  it('check equality after sum', function () {
+    assert.equal(calculateNumber(1, 1), 2);
+    assert.equal(calculateNumber(1, 1.2), 2);
+    assert.equal(calculateNumber(1, 1.6), 3);
+    assert.equal(calculateNumber(1.3, 1), 2);
+    assert.equal(calculateNumber(1.7, 1), 3);
+    assert.equal(calculateNumber(1.7, 1.8), 4);
+    assert.equal(calculateNumber(1.7, 1.2), 3);
+    assert.equal(calculateNumber(1.3, 1.8), 3);
+    assert.equal(calculateNumber(1.3, 1.3), 2);
   });
 });
